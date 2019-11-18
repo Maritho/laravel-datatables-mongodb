@@ -31,6 +31,7 @@ class MongodbDataTablesServiceProvider extends ServiceProvider
 
             $engine = Str::camel($engine);
 
+
             if (!DataTables::hasMacro($engine)) {
                 DataTables::macro($engine, function () use ($class) {
                     if (!call_user_func_array(array($class, 'canCreate'), func_get_args())) {
